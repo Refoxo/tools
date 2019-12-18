@@ -46,7 +46,9 @@ class Auth:
         except FileNotFoundError:
             return None
         if (
-                file_data and 'refresh_token' in file_data and 'client_id' in file_data
+                file_data
+                and 'refresh_token' in file_data
+                and 'client_id' in file_data
                 and 'client_secret' in file_data):
             self.credentials = Credentials(**file_data)
             return Credentials(**file_data)
